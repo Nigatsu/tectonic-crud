@@ -13,10 +13,9 @@ export default {
   },
   update: {
     body: {
-      name: Joi.string().required(),
-      email: Joi.string().email().required(),
-      oldPassword: Joi.string().required(),
-      newPassword: Joi.string().required(),
+      name: Joi.string().optional(),
+      email: Joi.string().email().optional(),
+      password: Joi.string().optional(),
       avatar: Joi.string().optional()
     }
   }

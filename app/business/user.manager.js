@@ -1,7 +1,7 @@
 'use strict';
 
 import { assign, omit } from 'lodash';
-import { encodePassword, comparePasswords } from '../services/security';
+import { encodePassword } from '../services/security';
 import * as userDAO from '../DAO/user.dao';
 
 function create(context) {
@@ -21,10 +21,7 @@ function getAll() {
 }
 
 function update(context, id) {
-  return userDAO.getById(id)
-    .then(user => comparePasswords(context.oldPassword, user.password))
-    .then(() => encodePassword(context.newPassword))
-    .then(key => userDAO.update(assign(omit(context, ['oldPassword', 'newPassword']), key), id))
+  return userDAO.update(assign(context, key), id)
     .then(user => omit(user, ['password', 'salt']));
 }
 

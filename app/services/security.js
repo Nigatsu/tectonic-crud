@@ -1,7 +1,6 @@
 'use strict';
 
 import * as bcrypt from 'bcrypt';
-const CustomError = require('../services/CustomError');
 
 const saltRounds = 10;
 
@@ -18,14 +17,6 @@ function encodePassword(password) {
   })
 }
 
-function comparePasswords(password, dbPassword) {
-  return bcrypt.compare(password, dbPassword).then((isMatch) => {
-    if (!isMatch) {
-      throw new CustomError('Incorrect password!', 404);
-    }
-  });
-}
-
 function authorizer(req, res, next) {
   if ('Bearer 123456789' === req.headers.authorization) {
     return next();
@@ -33,4 +24,4 @@ function authorizer(req, res, next) {
   res.sendStatus(401);
 }
 
-export { encodePassword, comparePasswords, authorizer }
+export { encodePassword, authorizer }
