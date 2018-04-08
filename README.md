@@ -5,5 +5,5 @@
  - npm: 5.8.0
 
 ## To run
-start mongodb (docker/local)
-npm run start
+ - start mongodb (docker/local)
+ - npm run start
