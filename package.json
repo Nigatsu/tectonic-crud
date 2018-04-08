@@ -1,0 +1,24 @@
+{
+  "name": "express-crud",
+  "version": "0.0.0",
+  "author": "pyteraf@gmail.com",
+  "dependencies": {
+    "bcrypt": "1.0.2",
+    "body-parser": "1.17.2",
+    "celebrate": "4.0.3",
+    "express": "4.15.4",
+    "joi": "10.6.0",
+    "lodash": "4.17.4",
+    "mongoose": "4.11.5"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-preset-es2015": "6.24.1"
+  },
+  "engines": {
+    "node": "8.11.1"
+  },
+  "scripts": {
+    "start": "nodemon app/server.js --exec babel-node --presets es2015"
+  }
+}
