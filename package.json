@@ -9,7 +9,7 @@
     "express": "4.15.4",
     "joi": "10.6.0",
     "lodash": "4.17.4",
-    "mongoose": "4.11.5"
+    "mongoose": "5.9.25"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
